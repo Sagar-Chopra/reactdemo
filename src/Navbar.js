@@ -1,4 +1,5 @@
-import React, {useState} from 'react'
+import React, {useState} from 'react';
+import {NavLink} from 'react-router-dom';
 
 const Navbar = () => {
 
@@ -7,30 +8,30 @@ const Navbar = () => {
   return (
     <>
     <section className="navbar-bg">
-     <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <a class="navbar-brand" href="#">ReactDemo</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={() => setShow(!show)}>
-            <span class="navbar-toggler-icon"></span>
+     <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="container">
+          <NavLink className="navbar-brand" to="/">ReactDemo</NavLink>
+          <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onClick={() => setShow(!show)}>
+            <span className="navbar-toggler-icon"></span>
           </button>
-          <div class={`collapse navbar-collapse ${show ? "show": ""}`}>
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+          <div className={`collapse navbar-collapse ${show ? "show": ""}`}>
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <NavLink className="nav-link active" aria-current="page" to="/">Home</NavLink>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Services</a>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/Service">Services</NavLink>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/About">About</NavLink>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+              <li className="nav-item">
+                <NavLink className="nav-link" to="/Contact">Contact</NavLink>
               </li>
             </ul>
-            <form class="d-flex">
-              <button class="btn-style" type="submit">Sign Up</button>
-              <button class="btn-style btn-style-border" type="submit">Log In</button>
+            <form className="d-flex">
+              <button className="btn-style" type="submit">Sign Up</button>
+              <button className="btn-style btn-style-border" type="submit">Log In</button>
             </form>
           </div>
         </div>

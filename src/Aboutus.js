@@ -1,6 +1,9 @@
-import React from 'react'
+import React from 'react';
+import { useState } from 'react/cjs/react.development';
+import Howtouse from './API/HowtouseAPI';
 
 const Aboutus = () => {
+  const[aboutData, setAboutData] = useState(Howtouse);
   return (
     <>
       <section className="common-section our-services">
@@ -15,14 +18,59 @@ const Aboutus = () => {
                 -- AVAILABLE FOR BUILD SINGLE PAGE WEBSITE
               </h3>
               <h1 className="main-heading">How To make a website</h1>
-              <div className="row our-services-info">
-                <div className="col-1 our-services-number">1</div>
-                <div className="col-10 our-services-data">
-                  <h2>Sign In</h2>
-                  <p className="main-hero-para">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugit, dolores placeat tenetur dolore reiciendis quae culpa iusto temporibus iure esse vero cupiditate aut. Veniam id corporis animi eaque, perferendis quam!</p>
-                </div>
-              </div>
+
+              {
+                aboutData.map((curElement)  => {
+                  const {id,title,info} = curElement;
+                 return(
+                  <div className="row our-services-info" key="id">
+                    <div className="col-1 our-services-number">{id}</div>
+                    <div className="col-10 our-services-data">
+                      <h2>{title}</h2>
+                      <p className="main-hero-para">{info}</p>
+                    </div>
+                  </div>
+                 );
+                }
+                )
+              }
+              <br />
               <button className="btn-style btn-style-border">Learn More</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <section className="common-section our-services our-services-rightside">
+        <div className="container mb-5">
+          <div className="row">
+            <div className="col-12 col-lg-7 our-services-rightside-content d-flex justify-content-center align-items-start flex-column">
+              <h3 className='mini-title'>
+                -- AVAILABLE FOR BUILD SINGLE PAGE WEBSITE
+              </h3>
+              <h1 className="main-heading">How To make a website</h1>
+
+              {
+                aboutData.map((curElement)  => {
+                  const {id,title,info} = curElement;
+                 return(
+                  <div className="row our-services-info" key="id">
+                    <div className="col-1 our-services-number">{id}</div>
+                    <div className="col-10 our-services-data">
+                      <h2>{title}</h2>
+                      <p className="main-hero-para">{info}</p>
+                    </div>
+                  </div>
+                 );
+                }
+                )
+              }
+              <br />
+              <button className="btn-style btn-style-border">Learn More</button>
+            </div>
+            <div className="col-12 col-lg-5 our-service-rightside-img">
+              <img src="./images/react2.jpg" alt="aboutus" />
             </div>
 
           </div>

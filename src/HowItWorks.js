@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState } from 'react/cjs/react.development';
-import Workapi from './WorkAPI';
+import Workapi from './API/WorkAPI';
 
 const HowItWorks = () => {
 
-  const [workdata, serWorkData] = useState(Workapi);
-  console.log(Workapi);
+  const [workdata, setWorkData] = useState(Workapi);
+  console.log(workdata);
 
   return (
     <>
@@ -13,7 +13,7 @@ const HowItWorks = () => {
         <h1 className="main-heading text-center">How Does It Work</h1>
         <div className="row">
         {
-          Workapi.map((curElement) =>{
+        workdata.map((curElement) =>{
             return (
               <>
               <div className="col-12 col-lg-4 text-center work-container-subdiv">
