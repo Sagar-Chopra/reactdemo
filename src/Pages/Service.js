@@ -1,10 +1,19 @@
-import React from 'react'
+import React from 'react';
+import Navbar from '../Navbar';
+
+import Services from '../Services';
+
+import Footer from '../Footer';
 
 const Service = () => {
   return (
-    <div>
-      <h1>services</h1>
-    </div>
+    <>
+      <Navbar />
+      
+      <Services />
+      
+      <Footer />
+    </>
   )
 }
 

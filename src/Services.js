@@ -11,7 +11,7 @@ const Services = () => {
          <h1 className="main-heading text-center fw-bold">
            How To Send Money
          </h1>
-         <div className="row">
+         <div className="row Services-main-row">
          {
            serviceData.map((curElement) => {
              const{id, logo, title, info} = curElement;
